@@ -3,13 +3,13 @@
 @section('main-content')
     <!-- SLIDER AREA START (slider-3) -->
     <style>
-                        .product-image {
-                            width: 200px;
-                            /* Adjust the width as per your requirement */
-                            height: 200px;
-                            /* Adjust the height as per your requirement */
-                        }
-                    </style>
+        .product-image {
+            width: 200px;
+            /* Adjust the width as per your requirement */
+            height: 200px;
+            /* Adjust the height as per your requirement */
+        }
+    </style>
     <div class="ltn__slider-area ltn__slider-3  section-bg-1">
         <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1">
             <!-- ltn__slide-item -->
@@ -231,19 +231,19 @@
                         </div>
                         <ul class="ltn__list-item-half clearfix">
                             <li>
-                                <i class="flaticon-home-2"></i>
+                                <i class="fa-solid fa-house fa-bounce"></i>
                                 Smart Home Design
                             </li>
                             <li>
-                                <i class="flaticon-mountain"></i>
+                                <i class="fa-solid fa-mountain fa-bounce"></i>
                                 Beautiful Scene Around
                             </li>
                             <li>
-                                <i class="flaticon-heart"></i>
+                                <i class="fa-solid fa-heart fa-bounce"></i>
                                 Exceptional Lifestyle
                             </li>
                             <li>
-                                <i class="flaticon-secure"></i>
+                                <i class="fa-solid fa-key fa-bounce"></i>
                                 Complete 24/7 Security
                             </li>
                         </ul>
@@ -316,7 +316,7 @@
                         <div class="section-title-area ltn__section-title-2--- mb-30">
                             <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">About Us</h6>
                             <h1 class="section-title">Today Sells Properties</h1>
-                            <p>Houzez allow you to design unlimited panels and real estate custom
+                            <p>Houses allow you to design unlimited panels and real estate custom
                                 forms to capture leads and keep record of all information</p>
                         </div>
                         <ul class="ltn__list-item-1 ltn__list-item-1-before clearfix">
@@ -326,33 +326,33 @@
                             <li>Live Music Cocerts at Luviana</li>
                         </ul>
                         <ul class="ltn__list-item-2 ltn__list-item-2-before ltn__flat-info">
-                            <li><span>3 <i class="flaticon-bed"></i></span>
+                            <li><span>3 <i class="fa-solid fa-bed"></i></span>
                                 Bedrooms
                             </li>
-                            <li><span>2 <i class="flaticon-clean"></i></span>
+                            <li><span>2 <i class="fa-solid fa-bath"></i></span>
                                 Bathrooms
                             </li>
-                            <li><span>2 <i class="flaticon-car"></i></span>
+                            <li><span>2 <i class="fa-solid fa-car"></i></span>
                                 Car parking
                             </li>
-                            <li><span>3450 <i class="flaticon-square-shape-design-interface-tool-symbol"></i></span>
+                            <li><span>3450 <i class="fa-solid fa-square"></i></span>
                                 square Ft
                             </li>
                         </ul>
                         <ul class="ltn__list-item-2 ltn__list-item-2-before--- ltn__list-item-2-img mb-50">
                             <li>
-                                <a href="img/img-slide/11.jpg" data-rel="lightcase:myCollection">
-                                    <img src="img/img-slide/11.jpg" alt="Image">
+                                <a href="img/others/7.png"data-rel="lightcase:myCollection">
+                                    <img src="img/others/7.png" alt="Image">
                                 </a>
                             </li>
                             <li>
-                                <a href="img/img-slide/12.jpg" data-rel="lightcase:myCollection">
-                                    <img src="img/img-slide/12.jpg" alt="Image">
+                                <a href="img/product/1.png"data-rel="lightcase:myCollection">
+                                    <img src="img/product/1.png" alt="Image">
                                 </a>
                             </li>
                             <li>
-                                <a href="img/img-slide/13.jpg" data-rel="lightcase:myCollection">
-                                    <img src="img/img-slide/13.jpg" alt="Image">
+                                <a href="img/others/8.png"data-rel="lightcase:myCollection">
+                                    <img src="img/others/8.png" alt="Image">
                                 </a>
                             </li>
                         </ul>
@@ -392,7 +392,7 @@
                             <p>over 1 million+ homes for sale available on the website, we can match you with a house you
                                 will want to call home.</p>
                             <a class="ltn__service-btn" href="service-details.html">Find A Home <i
-                                    class="flaticon-right-arrow"></i></a>
+                                    class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -444,7 +444,6 @@
             </div>
             <div class="row ltn__product-slider-item-four-active-full-width slick-arrow-1">
                 @foreach ($collection as $item)
-
                     <div class="col-lg-12">
                         <div class="ltn__product-item ltn__product-item-4 text-center---">
                             <div class="product-img">
@@ -1283,7 +1282,7 @@
                                 um dolor sit amet, consecte</p>
                             <div class="ltn__testimoni-info-inner">
                                 <div class="ltn__testimoni-img">
-                                    <img src="img/testimonial/1.jpg" alt="#">
+                                    <i class="fa-solid fa-circle-user fa-bg fa-beat-fade fa-lg"></i>
                                 </div>
                                 <div class="ltn__testimoni-name-designation">
                                     <h5>Jacob William</h5>
@@ -1305,7 +1304,7 @@
                                 um dolor sit amet, consecte</p>
                             <div class="ltn__testimoni-info-inner">
                                 <div class="ltn__testimoni-img">
-                                    <i class="fa-solid fa-circle-user fa-beat-fade fa-lg"></i>
+                                    <i class="fa-solid fa-circle-user fa-bg fa-beat-fade fa-lg"></i>
                                 </div>
                                 <div class="ltn__testimoni-name-designation">
                                     <h5>Kelian Anderson</h5>
@@ -1318,7 +1317,7 @@
                 <div class="col-lg-4">
                     <div class="ltn__testimonial-item ltn__testimonial-item-7">
                         <div class="ltn__testimoni-info">
-                            <p><i class="flaticon-left-quote-1"></i>
+                            <p><i class="fa-solid fa-quote-left"></i>
                                 Precious ipsum dolor sit amet
                                 consectetur adipisicing elit, sed dos
                                 mod tempor incididunt ut labore et
