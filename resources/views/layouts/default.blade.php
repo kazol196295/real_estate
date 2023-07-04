@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 
     <!-- Place favicon.png in the root directory -->
-    <link rel="shortcut icon" href="{{asset('img/favicon.png')}} " type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }} " type="image/x-icon" />
     <!-- Font Icons css -->
     <link rel="stylesheet" href="{{ asset('css/font-icons.css') }} ">
     {{-- <link rel="stylesheet" href="css/fontawesome.min.css"> --}}
@@ -95,9 +95,9 @@
                                         </li>
                                         <li>
                                             <!-- header-top-btn -->
-                                            <div class="header-top-btn">
+                                            {{-- <div class="header-top-btn">
                                                 <a href="add-listing.html">Add Listing</a>
-                                            </div>
+                                            </div> --}}
                                         </li>
                                     </ul>
                                 </div>
@@ -115,7 +115,7 @@
                         <div class="col">
                             <div class="site-logo-wrap">
                                 <div class="site-logo">
-                                    <a href="index.html"><img src="img/logo-home-.png" alt="Logo"></a>
+                                    <a href="index.html"><img src="{{asset('img/logo-home-.png')}} " alt="Logo"></a>
                                 </div>
                                 <div class="get-support clearfix d-none">
                                     <div class="get-support-icon">
@@ -136,7 +136,7 @@
                                             <li><a href="{{ route('home') }}">Home</a></li>
                                             <li><a href="{{ route('about') }}">About</a></li>
                                             <li><a href="{{ url('/shop') }}">Shop</a></li>
-                                            <li><a href="#">News</a></li>
+                                            {{-- <li><a href="#">News</a></li> --}}
                                             {{-- <li><a href="#">Pages</a></li> --}}
                                             <li><a href="{{ url('/contact') }}">Contact</a></li>
                                         </ul>
@@ -168,10 +168,10 @@
                                     <li>
                                         <a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
                                         <ul>
-                                            <li><a href="{{ route('home') }}">Sign in</a></li>
-                                            <li><a href="{{ route('home') }}">Register</a></li>
+                                            <li><a href="{{ route('login') }}">Sign in</a></li>
+                                            <li><a href="{{ route('register') }}">Register</a></li>
                                             <li><a href="{{ route('home') }}">My Account</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                            {{-- <li><a href="wishlist.html">Wishlist</a></li> --}}
                                         </ul>
                                     </li>
                                 </ul>

@@ -84,11 +84,12 @@
 
 
                                     @foreach ($products as $product)
+
                                         <div class="col-xl-6 col-sm-6 col-12">
                                             <div
                                                 class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
                                                 <div class="product-img">
-                                                    <a href="{{ route('productdetails',$product->id) }}"><img
+                                                    <a href="{{ route('productdetails', $product->id) }}"><img
                                                             src="{{ asset('includes/products') . '/' . json_decode($product->image) }}"
                                                             alt=""></a>
                                                     <div class="real-estate-agent">
@@ -138,8 +139,8 @@
                                                         <ul>
                                                             <li>
                                                                 <a href="#" title="Quick View" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick_view_modal">
-                                                                    <i class="flaticon-expand"></i>
+                                                                    data-bs-target="#quick_view_modal_{{ $product->id}}">
+                                                                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -163,6 +164,133 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    @endforeach
+
+                                    @foreach ($products  as $product )
+
+                                    <div class="ltn__modal-area ltn__quick-view-modal-area">
+        <div class="modal fade" id="quick_view_modal_{{ $product->id}}" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <!-- <i class="fas fa-times"></i> -->
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ltn__quick-view-modal-inner">
+                            <div class="modal-product-item">
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <div class="modal-product-img">
+                                            <img src="{{ asset('includes/products') . '/' . json_decode($product->image) }}" alt="#">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="modal-product-info">
+                                            <div class="product-ratting">
+                                                <ul>
+                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fas fa-star-half-alt"></i></a>
+                                                    </li>
+                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                    <li class="review-total"> <a href="#"> ( 95 Reviews
+                                                            )</a></li>
+                                                </ul>
+                                            </div>
+                                            <h3><a href="product-details.html">3 Rooms Manhattan</a></h3>
+                                            <div class="product-price">
+                                                <span>$34,900</span>
+                                                <del>$36,500</del>
+                                            </div>
+                                            <hr>
+                                            <div class="modal-product-brief">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                    Dignissimos repellendus repudiandae incidunt quidem pariatur
+                                                    expedita, quo quis modi tempore non.</p>
+                                            </div>
+                                            <div class="modal-product-meta ltn__product-details-menu-1 d-none">
+                                                <ul>
+                                                    <li>
+                                                        <strong>Categories:</strong>
+                                                        <span>
+                                                            <a href="#">Parts</a>
+                                                            <a href="#">Car</a>
+                                                            <a href="#">Seat</a>
+                                                            <a href="#">Cover</a>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="ltn__product-details-menu-2 d-none">
+                                                <ul>
+                                                    <li>
+                                                        <div class="cart-plus-minus">
+                                                            <input type="text" value="02" name="qtybutton"
+                                                                class="cart-plus-minus-box">
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="theme-btn-1 btn btn-effect-1"
+                                                            title="Add to Cart" data-bs-toggle="modal"
+                                                            data-bs-target="#add_to_cart_modal">
+                                                            <i class="fas fa-shopping-cart"></i>
+                                                            <span>ADD TO CART</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- <hr> -->
+                                            <div class="ltn__product-details-menu-3">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="" title="Wishlist"
+                                                            data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
+                                                            <i class="far fa-heart"></i>
+                                                            <span>Add to Wishlist</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="" title="Compare"
+                                                            data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+                                                            <i class="fas fa-exchange-alt"></i>
+                                                            <span>Compare</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <hr>
+                                            <div class="ltn__social-media">
+                                                <ul>
+                                                    <li>Share:</li>
+                                                    <li><a href="#" title="Facebook"><i
+                                                                class="fab fa-facebook-f"></i></a></li>
+                                                    <li><a href="#" title="Twitter"><i
+                                                                class="fab fa-twitter"></i></a></li>
+                                                    <li><a href="#" title="Linkedin"><i
+                                                                class="fab fa-linkedin"></i></a></li>
+                                                    <li><a href="#" title="Instagram"><i
+                                                                class="fab fa-instagram"></i></a></li>
+
+                                                </ul>
+                                            </div>
+                                            <label class="float-end mb-0"><a class="text-decoration"
+                                                    href="product-details.html"><small>View
+                                                        Details</small></a></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
                                     @endforeach
 
                                     <!-- ltn__product-item -->
@@ -462,7 +590,7 @@
                                                         <li>
                                                             <a href="#" title="Quick View" data-bs-toggle="modal"
                                                                 data-bs-target="#quick_view_modal">
-                                                                <i class="flaticon-expand"></i>
+                                                                <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                                                             </a>
                                                         </li>
                                                         <li>
@@ -619,61 +747,9 @@
                                     </label>
                                     <span class="categorey-no">1,853</span>
                                 </li>
-                                <li>
-                                    <label class="checkbox-item">Studio
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <span class="categorey-no">893</span>
-                                </li>
+
                             </ul>
-                            <hr>
-                            <h4 class="ltn__widget-title">Amenities</h4>
-                            <ul>
-                                <li>
-                                    <label class="checkbox-item">Dishwasher
-                                        <input type="checkbox" checked="checked">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <span class="categorey-no">3,924</span>
-                                </li>
-                                <li>
-                                    <label class="checkbox-item">Floor Coverings
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <span class="categorey-no">3,610</span>
-                                </li>
-                                <li>
-                                    <label class="checkbox-item">Internet
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <span class="categorey-no">2,912</span>
-                                </li>
-                                <li>
-                                    <label class="checkbox-item">Build Wardrobes
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <span class="categorey-no">2,687</span>
-                                </li>
-                                <li>
-                                    <label class="checkbox-item">Supermarket
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <span class="categorey-no">1,853</span>
-                                </li>
-                                <li>
-                                    <label class="checkbox-item">Kids Zone
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <span class="categorey-no">893</span>
-                                </li>
-                            </ul>
-                            <hr>
+
                             <h4 class="ltn__widget-title">Price Renge</h4>
                             <ul>
                                 <li>
@@ -969,7 +1045,7 @@
                             <p>We can help you realize your dream of a new home</p>
                         </div>
                         <div class="btn-wrapper">
-                            <a class="btn btn-effect-3 btn-white" href="contact.html">Explore Properties <i
+                            <a class="btn btn-effect-3 btn-white" href="{{route('contact')}}">Explore Properties <i
                                     class="icon-next"></i></a>
                         </div>
                     </div>
@@ -980,126 +1056,5 @@
     <!-- CALL TO ACTION END -->
 
     <!-- MODAL AREA START (Quick View Modal) -->
-    <div class="ltn__modal-area ltn__quick-view-modal-area">
-        <div class="modal fade" id="quick_view_modal" tabindex="-1">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            <!-- <i class="fas fa-times"></i> -->
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="ltn__quick-view-modal-inner">
-                            <div class="modal-product-item">
-                                <div class="row">
-                                    <div class="col-lg-6 col-12">
-                                        <div class="modal-product-img">
-                                            <img src="img/product/4.png" alt="#">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-12">
-                                        <div class="modal-product-info">
-                                            <div class="product-ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star-half-alt"></i></a>
-                                                    </li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li class="review-total"> <a href="#"> ( 95 Reviews
-                                                            )</a></li>
-                                                </ul>
-                                            </div>
-                                            <h3><a href="product-details.html">3 Rooms Manhattan</a></h3>
-                                            <div class="product-price">
-                                                <span>$34,900</span>
-                                                <del>$36,500</del>
-                                            </div>
-                                            <hr>
-                                            <div class="modal-product-brief">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                    Dignissimos repellendus repudiandae incidunt quidem pariatur
-                                                    expedita, quo quis modi tempore non.</p>
-                                            </div>
-                                            <div class="modal-product-meta ltn__product-details-menu-1 d-none">
-                                                <ul>
-                                                    <li>
-                                                        <strong>Categories:</strong>
-                                                        <span>
-                                                            <a href="#">Parts</a>
-                                                            <a href="#">Car</a>
-                                                            <a href="#">Seat</a>
-                                                            <a href="#">Cover</a>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="ltn__product-details-menu-2 d-none">
-                                                <ul>
-                                                    <li>
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="02" name="qtybutton"
-                                                                class="cart-plus-minus-box">
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="theme-btn-1 btn btn-effect-1"
-                                                            title="Add to Cart" data-bs-toggle="modal"
-                                                            data-bs-target="#add_to_cart_modal">
-                                                            <i class="fas fa-shopping-cart"></i>
-                                                            <span>ADD TO CART</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- <hr> -->
-                                            <div class="ltn__product-details-menu-3">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#" class="" title="Wishlist"
-                                                            data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-                                                            <i class="far fa-heart"></i>
-                                                            <span>Add to Wishlist</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="" title="Compare"
-                                                            data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                                            <i class="fas fa-exchange-alt"></i>
-                                                            <span>Compare</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <hr>
-                                            <div class="ltn__social-media">
-                                                <ul>
-                                                    <li>Share:</li>
-                                                    <li><a href="#" title="Facebook"><i
-                                                                class="fab fa-facebook-f"></i></a></li>
-                                                    <li><a href="#" title="Twitter"><i
-                                                                class="fab fa-twitter"></i></a></li>
-                                                    <li><a href="#" title="Linkedin"><i
-                                                                class="fab fa-linkedin"></i></a></li>
-                                                    <li><a href="#" title="Instagram"><i
-                                                                class="fab fa-instagram"></i></a></li>
 
-                                                </ul>
-                                            </div>
-                                            <label class="float-end mb-0"><a class="text-decoration"
-                                                    href="product-details.html"><small>View
-                                                        Details</small></a></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection

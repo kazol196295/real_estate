@@ -33,7 +33,7 @@ Route::get('/product_details/{ID}/', [App\Http\Controllers\ProductController::cl
 
 
 Route::get('admin/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard')->middleware('role');
-Route::get('admin/product/create', [App\Http\Controllers\ProductController::class, 'create'])->name('product.create');
+Route::get('admin/product/create', [App\Http\Controllers\ProductController::class, 'create'])->name('product.create')->middleware('role');
 Route::get('admin/products', [App\Http\Controllers\ProductController::class, 'index'])->name('product.index');
 Route::post('admin/product/store', [App\Http\Controllers\ProductController::class, 'store'])->name('product.store');
 Route::get('admin/product/edit/{id}', [ProductController::class, 'editProduct'])->name('product.edit');
