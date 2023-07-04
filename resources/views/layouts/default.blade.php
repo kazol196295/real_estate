@@ -19,19 +19,19 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 
     <!-- Place favicon.png in the root directory -->
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{asset('img/favicon.png')}} " type="image/x-icon" />
     <!-- Font Icons css -->
-    <link rel="stylesheet" href="css/font-icons.css">
+    <link rel="stylesheet" href="{{ asset('css/font-icons.css') }} ">
     {{-- <link rel="stylesheet" href="css/fontawesome.min.css"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- plugins css -->
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/icomoon@1.0.0/style.min.css"> --}}
-    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- Responsive css -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 </head>
 
 <body>
@@ -168,9 +168,9 @@
                                     <li>
                                         <a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
                                         <ul>
-                                            <li><a href="{{route('home')}}">Sign in</a></li>
-                                            <li><a href="{{route('home')}}">Register</a></li>
-                                            <li><a href="{{route('home')}}">My Account</a></li>
+                                            <li><a href="{{ route('home') }}">Sign in</a></li>
+                                            <li><a href="{{ route('home') }}">Register</a></li>
+                                            <li><a href="{{ route('home') }}">My Account</a></li>
                                             <li><a href="wishlist.html">Wishlist</a></li>
                                         </ul>
                                     </li>

@@ -84,8 +84,8 @@ class ProductController extends Controller
     }
     public function productdetails($ID)
     {
-        $kazol = Product::findOrFail($ID);
-        return view('pages.productdetails', compact('kazol'));
+        $product = Product::findOrFail($ID);
+        return view('pages.productdetails', compact('product'));
     }
 
 
