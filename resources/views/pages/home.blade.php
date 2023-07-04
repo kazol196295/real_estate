@@ -1403,7 +1403,7 @@
     </div>
     <!-- BRAND LOGO AREA END -->
 
-    <!-- BLOG AREA START (blog-3) -->
+    {{-- <!-- BLOG AREA START (blog-3) -->
     <div class="ltn__blog-area pt-115--- pb-70">
         <div class="container">
             <div class="row">
@@ -1579,7 +1579,7 @@
             </div>
         </div>
     </div>
-    <!-- BLOG AREA END -->
+    <!-- BLOG AREA END --> --}}
 
     <!-- CALL TO ACTION START (call-to-action-6) -->
     <div class="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bs-bg="img/1.jpg--">

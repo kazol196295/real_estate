@@ -36,6 +36,20 @@
             border-top: 0px solid #dee2e6 !important;
             color: #728299 !important;
         }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+            /* Adjust the gap between the buttons as needed */
+        }
+
+        /* Alternatively, you can use grid layout */
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 10px;
+            /* Adjust the gap between the buttons as needed */
+        }
     </style>
 
 
@@ -103,7 +117,7 @@
     </div>
     <!-- IMAGE SLIDER AREA END -->
 
-    {{-- Template for product list --}}
+    {{--  product list --}}
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <div class="container">
@@ -111,78 +125,90 @@
             <div class="card-body">
                 <h3 class="card-title">{{ $product->name }}</h3>
                 <h6 class="card-subtitle">This property is {{ $product->status }}</h6>
-                    <div class="row">
-                        <div class="col-lg-5 col-md-5 col-sm-6">
-                            <div class="white-box text-center"><img
-                                    src="{{ asset('includes/products') . '/' . json_decode($product->image) }}"
-                                    class="img-responsive"></div>
-                        </div>
-                        <div class="col-lg-7 col-md-7 col-sm-6">
-                            <h4 class="box-title mt-5">Product description</h4>
-                            <p>{{ $product->description }}</p>
-                            <h2 class="mt-5">
-                                {{ $product->price }} <small class="text-success">(20%off)</small>
-                            </h2>
-                            <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title=""
-                                data-original-title="Add to cart">
-                                <i class="fa fa-shopping-cart"></i>
-                            </button>
-                            <button class="btn btn-primary btn-rounded">Buy Now</button>
-                            <h3 class="box-title mt-5">Key Highlights</h3>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-check text-success"></i>Sturdy structure</li>
-                                <li><i class="fa fa-check text-success"></i>Designed to foster easy portability</li>
-                                <li><i class="fa fa-check text-success"></i>Perfect furniture to flaunt your wonderful
-                                    collectibles</li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h3 class="box-title mt-5">General Info</h3>
-                            <div class="table-responsive">
-                                <table class="table table-striped table-product">
-                                    <tbody>
-                                        <tr>
-                                            <td width="390">Name:</td>
-                                            <td>{{ $product->name }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Property status</td>
-                                            <td>{{ $product->status }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Home area</td>
-                                            <td>{{ $product->area }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Author</td>
-                                            <td>Md kawsar ahmed kazol</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Bedrooms</td>
-                                            <td>{{ $product->beds }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Bathrooms</td>
-                                            <td>{{ $product->baths }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Total rooms</td>
-                                            <td>{{ $product->rooms }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>LOcation</td>
-                                            <td>{{ $product->location }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Featured ??</td>
-                                            <td>{{ $product->featured }}</td>
-                                        </tr>
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-6">
+                        <div class="white-box text-center"><img
+                                src="{{ asset('includes/products') . '/' . json_decode($product->image) }}"
+                                class="img-responsive"></div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-6">
+                        <h4 class="box-title mt-5">Product description</h4>
+                        <p>{{ $product->description }}</p>
+                        <h2 class="mt-5">
+                            {{ $product->price }} $<small class="text-success">(20%off)</small>
+                        </h2>
 
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="button-container">
+                            <form action="{{ route('cart.add') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <button type="submit" class="btn btn-dark btn-rounded mr-1" title="Add to cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </button>
+                            </form>
+
+                            <form action="{{ route('cart.buy') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <button type="submit" class="btn btn-primary btn-rounded">Buy Now</button>
+                            </form>
+                        </div>
+
+                        <h3 class="box-title mt-5">Key Highlights</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-check text-success"></i>Sturdy structure</li>
+                            <li><i class="fa fa-check text-success"></i>Designed to foster easy portability</li>
+                            <li><i class="fa fa-check text-success"></i>Perfect furniture to flaunt your wonderful
+                                collectibles</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h3 class="box-title mt-5">General Info</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-product">
+                                <tbody>
+                                    <tr>
+                                        <td width="390">Name:</td>
+                                        <td>{{ $product->name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Property status</td>
+                                        <td>{{ $product->status }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Home area</td>
+                                        <td>{{ $product->area }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Author</td>
+                                        <td>Md kawsar ahmed kazol</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bedrooms</td>
+                                        <td>{{ $product->beds }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bathrooms</td>
+                                        <td>{{ $product->baths }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total rooms</td>
+                                        <td>{{ $product->rooms }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>LOcation</td>
+                                        <td>{{ $product->location }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Featured ??</td>
+                                        <td>{{ $product->featured }}</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>

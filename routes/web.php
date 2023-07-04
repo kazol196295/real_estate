@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,10 +27,14 @@ Route::get('/login', [App\Http\Controllers\HomeController::class, 'login'])->nam
 Route::get('/register', [App\Http\Controllers\HomeController::class, 'register'])->name('register');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
-Route::get('/cart', [App\Http\Controllers\HomeController::class, 'cart'])->name('cart');
+// Route::get('/cart', [App\Http\Controllers\HomeController::class, 'cart'])->name('cart');
 Route::get('/checkout', [App\Http\Controllers\HomeController::class, 'checkout'])->name('checkout');
 // Route::get('/product-details/{id}', [App\Http\Controllers\HomeController::class, 'productdetails'])->name('product.details');
 Route::get('/product_details/{ID}/', [App\Http\Controllers\ProductController::class, 'productdetails'])->name('productdetails');
+
+Route::post('/cart/add', [CartController::class,'addtoCart'])->name('cart.add');
+Route::post('/cart/buy', [CartController::class, 'buyNow'])->name('cart.buy');
+
 
 
 Route::get('admin/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard')->middleware('role');
