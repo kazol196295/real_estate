@@ -26,8 +26,8 @@
                         </div>
                         <div class="form-group">
                             <label for="Description">Description</label>
-                            <textarea class="form-control" id="productDescription" value="{{ $edit_info->description }}"name="description"
-                                rows="5" required></textarea>
+                            <textarea class="form-control" id="productDescription" value="{{ $edit_info->description }}" name="description"
+                                rows="5" required>{{ $edit_info->description }}</textarea>
                         </div>
                         <div class="row">
                             <div class="col-md-4">

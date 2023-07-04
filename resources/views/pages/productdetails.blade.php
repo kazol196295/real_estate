@@ -110,7 +110,7 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title">{{ $product->name }}</h3>
-                <h6 class="card-subtitle">This property is {{ $product->status }}/h6>
+                <h6 class="card-subtitle">This property is {{ $product->status }}</h6>
                     <div class="row">
                         <div class="col-lg-5 col-md-5 col-sm-6">
                             <div class="white-box text-center"><img

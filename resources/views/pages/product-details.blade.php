@@ -80,10 +80,10 @@
                                     <a class="bg-orange" href="#">For Rent</a>
                                 </li>
                                 <li class="ltn__blog-date">
-                                    <i class="far fa-calendar-alt"></i>May 19, 2021
+                                    <i class="far fa-calendar-alt"></i>May 19, 2023
                                 </li>
                                 <li>
-                                    <a href="#"><i class="far fa-comments"></i>35 Comments</a>
+                                    <a href="#"><i class="far fa-comments"></i>15 Comments</a>
                                 </li>
                             </ul>
                         </div>
